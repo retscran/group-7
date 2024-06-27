@@ -122,3 +122,37 @@ def solve(grid, i, j):
             if m[i][j] == val:
                 return False
     return True     
+# Display instruction for the game
+def instruction():
+    text1 = font2.render("PRESS D TO RESET TO DEFAULT / R TO EMPTY", 1, (0, 0, 0))
+    text2 = font2.render("ENTER VALUES AND PRESS ENTER TO VISUALIZE", 1, (0, 0, 0))
+    screen.blit(text1, (20, 520))
+    screen.blit(text2, (20, 540))
+
+
+# Display options when solved
+def result():
+    text1 = font1.render("FINISHED PRESS R or D", 1, (0, 0, 0))
+    screen.blit(text1, (20, 570))
+
+
+run = True
+flag1 = 0
+flag2 = 0
+rs = 0
+error = 0
+# The loop thats keep the window running
+while run:
+
+    # White color background
+    screen.fill((255, 255, 255))
+    # Loop through the events stored in event.get()
+    for event in pygame.event.get():
+        # Quit the game window
+        if event.type == pygame.QUIT:
+            run = False
+        # Get the mouse position to insert number
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            flag1 = 1
+            pos = pygame.mouse.get_pos()
+            get_cord(pos)
