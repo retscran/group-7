@@ -206,3 +206,51 @@ while run:
                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0]
                 ]
+                # If D is pressed reset the board to default
+            if event.key == pygame.K_d:
+                rs = 0
+                error = 0
+                flag2 = 0
+                grid = [
+                    [7, 8, 0, 4, 0, 0, 1, 2, 0],
+                    [6, 0, 0, 0, 7, 5, 0, 0, 9],
+                    [0, 0, 0, 6, 0, 1, 0, 7, 8],
+                    [0, 0, 7, 0, 4, 0, 2, 6, 0],
+                    [0, 0, 1, 0, 5, 0, 9, 3, 0],
+                    [9, 0, 4, 0, 6, 0, 0, 0, 5],
+                    [0, 7, 0, 3, 0, 0, 0, 1, 2],
+                    [1, 2, 0, 0, 0, 7, 4, 0, 0],
+                    [0, 4, 9, 2, 0, 6, 0, 0, 7]
+                ]
+    if flag2 == 1:
+        if solve(grid, 0, 0) == False:
+            error = 1
+        else:
+            rs = 1
+        flag2 = 0
+    if val != 0:
+        draw_val(val)
+        # print(x)
+        # print(y)
+        if valid(grid, int(x), int(y), val) == True:
+            grid[int(x)][int(y)] = val
+            flag1 = 0
+        else:
+            grid[int(x)][int(y)] = 0
+            raise_error2()
+        val = 0
+
+    if error == 1:
+        raise_error1()
+    if rs == 1:
+        result()
+    draw()
+    if flag1 == 1:
+        draw_box()
+    instruction()
+
+    # Update window
+    pygame.display.update()
+
+# Quit pygame window
+pygame.quit()
