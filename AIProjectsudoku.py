@@ -156,3 +156,53 @@ while run:
             flag1 = 1
             pos = pygame.mouse.get_pos()
             get_cord(pos)
+# Get the number to be inserted if key pressed
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                x -= 1
+                flag1 = 1
+            if event.key == pygame.K_RIGHT:
+                x += 1
+                flag1 = 1
+            if event.key == pygame.K_UP:
+                y -= 1
+                flag1 = 1
+            if event.key == pygame.K_DOWN:
+                y += 1
+                flag1 = 1
+            if event.key == pygame.K_1:
+                val = 1
+            if event.key == pygame.K_2:
+                val = 2
+            if event.key == pygame.K_3:
+                val = 3
+            if event.key == pygame.K_4:
+                val = 4
+            if event.key == pygame.K_5:
+                val = 5
+            if event.key == pygame.K_6:
+                val = 6
+            if event.key == pygame.K_7:
+                val = 7
+            if event.key == pygame.K_8:
+                val = 8
+            if event.key == pygame.K_9:
+                val = 9
+            if event.key == pygame.K_RETURN:
+                flag2 = 1
+            # If R pressed clear the sudoku board
+            if event.key == pygame.K_r:
+                rs = 0
+                error = 0
+                flag2 = 0
+                grid = [
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0]
+                ]
