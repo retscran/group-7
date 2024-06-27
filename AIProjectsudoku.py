@@ -20,8 +20,6 @@ grid = [
 ]
 
 
-
-
 font1 = pygame.font.SysFont("comicsans", 40)
 font2 = pygame.font.SysFont("comicsans", 20)
 
@@ -36,7 +34,11 @@ def draw_box():
     for i in range(2):
         pygame.draw.line(screen, (255, 0, 0), (x * dif - 3, (y + i) * dif), (x * dif + dif + 3, (y + i) * dif), 7)
         pygame.draw.line(screen, (255, 0, 0), ((x + i) * dif, y * dif), ((x + i) * dif, y * dif + dif), 7)
-   def draw():
+
+
+
+
+def draw():
   for i in range(9):
         for j in range(9):
             if grid[i][j] != 0:
@@ -84,7 +86,12 @@ def valid(m, i, j, val):
     jt = j // 3
     for i in range(it * 3, it * 3 + 3):
         for j in range(jt * 3, jt * 3 + 3):
-            # Solves the sudoku board using Backtracking Algorithm
+            if m[i][j] == val:
+                return False
+    return True
+
+
+# Solves the sudoku board using Backtracking Algorithm
 def solve(grid, i, j):
     while grid[i][j] != 0:
         if i < 8:
@@ -119,9 +126,8 @@ def solve(grid, i, j):
             pygame.display.update()
             pygame.time.delay(50)
     return False
-            if m[i][j] == val:
-                return False
-    return True     
+
+
 # Display instruction for the game
 def instruction():
     text1 = font2.render("PRESS D TO RESET TO DEFAULT / R TO EMPTY", 1, (0, 0, 0))
@@ -144,7 +150,7 @@ error = 0
 # The loop thats keep the window running
 while run:
 
-    # White color background
+# White color background
     screen.fill((255, 255, 255))
     # Loop through the events stored in event.get()
     for event in pygame.event.get():
@@ -156,7 +162,7 @@ while run:
             flag1 = 1
             pos = pygame.mouse.get_pos()
             get_cord(pos)
-# Get the number to be inserted if key pressed
+        # Get the number to be inserted if key pressed
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 x -= 1
@@ -206,7 +212,7 @@ while run:
                     [0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0]
                 ]
-                # If D is pressed reset the board to default
+            # If D is pressed reset the board to default
             if event.key == pygame.K_d:
                 rs = 0
                 error = 0
