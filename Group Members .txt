@@ -1,8 +1,8 @@
 Group Members 
- Name ID
-1. NATNAEL SINTAYEHU 1402130 
-2. AMANUEL IFA 1400872
-3. ADONIYAS YAZEW 1400848
-4. WUBSERA DAMTIE 1403073
-5. MIHRET ABATE 1401805
-6, Natnael Bizuayehu  1402119
+ Name ID                    username              id
+1. NATNAEL SINTAYEHU       retscran             1402130 
+2. AMANUEL IFA             amanuelifa           1400872
+3. ADONIYAS YAZEW          adoniyazew           1400848
+4. WUBSERA DAMTIE          wubseradamtie        1403073
+5. MIHRET ABATE            biscuit-bb           1401805
+6, Natnael Bizuayehu       natnael-bizuyehu     1402119
